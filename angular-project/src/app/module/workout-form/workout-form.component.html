@@ -1,0 +1,73 @@
+<div class="container">
+    <h1>Add Exercise</h1>
+    <form #f="ngForm" (ngSubmit)="submit(f)">
+      <div class="form-group">
+        <label for="exName">Exercise Name</label>
+        <input
+          type="text"
+          id="exName"
+          placeholder="Exercise name"
+          name="name"
+          [(ngModel)]="excercise.name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="Sets">Sets</label>
+        <input
+          type="number"
+          id="Sets"
+          name="Sets"
+          placeholder="Enter sets amount"
+          [(ngModel)]="excercise.sets"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="Reps">Reps</label>
+        <input
+          type="number"
+          id="Reps"
+          name="Reps"
+          placeholder="Enter reps amount"
+          [(ngModel)]="excercise.reps"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="Weight">Weight (kg)</label>
+        <input
+          type="number"
+          id="Weight"
+          name="Weight"
+          placeholder="Enter weight (kg)"
+          [(ngModel)]="excercise.weight"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="comments">Comments</label>
+        <textarea
+          class="form-control"
+          id="comments"
+          name="comments"
+          placeholder="Enter any additional notes here"
+          [(ngModel)]="excercise.comments"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="Select">Day</label>
+        <select class="form-control" id="Select" name="Day" required [(ngModel)]="excercise.Day">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+      </div>
+      <button type="submit" [disabled]="f.invalid || f.untouched">Submit</button>
+    </form>
+  </div>
+  

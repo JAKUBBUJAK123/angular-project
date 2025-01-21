@@ -1,0 +1,74 @@
+<div class="container">
+  <h1>Customer Data</h1>
+  <section class="customer-data">
+    <div *ngFor="let customer of customers" class="customer-section">
+      <div class="customer-header">
+        <h2>{{ customer.name }} ({{ customer.branch }})</h2>
+        <p>
+          <strong>NIP:</strong> {{ customer.nip }} |
+          <strong>City:</strong> {{ customer.city }} |
+          <strong>Street:</strong> {{ customer.street }} |
+          <strong>Postal Code:</strong> {{ customer.postalCode }} |
+          <strong>Active:</strong> {{ customer.active ? 'Yes' : 'No' }}
+        </p>
+        <button (click)="goToFoodForm(customer.id)">Add Food</button>
+        <button (click)="goToWorkoutForm(customer.id)">Add Workout</button>
+      </div>
+      <div class="customer-details">
+        <h3>Food</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Calories</th>
+              <th>Protein</th>
+              <th>Fat</th>
+              <th>Carbs</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let food of getCustomerFood(customer.id)">
+              <td>{{ food.name }}</td>
+              <td>{{ food.calories }}</td>
+              <td>{{ food.protein }}</td>
+              <td>{{ food.fat }}</td>
+              <td>{{ food.carbs }}</td>
+              <td>{{ food.time }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="customer-details">
+        <h3>Excercises</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Sets</th>
+              <th>Reps</th>
+              <th>Weight (kg)</th>
+              <th>Comments</th>
+              <th>Day</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let workout of getCustomerExercises(customer.id)">
+              <td>{{ workout.name }}</td>
+              <td>{{ workout.sets }}</td>
+              <td>{{ workout.reps }}</td>
+              <td>{{ workout.weight }}</td>
+              <td>{{ workout.comments }}</td>
+              <td>{{ workout.Day }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <div class="button-container">
+    <button (click)="goBack()">Create another customer</button>
+  </div>
+  
+</div>

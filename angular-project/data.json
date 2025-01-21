@@ -1,0 +1,70 @@
+{
+  "customers": [
+    {
+      "id": "1d45ec78-0118-4a16-990a-03682f330b89",
+      "name": "jdksal",
+      "nip": "312321",
+      "city": "Krakow",
+      "street": "djskla",
+      "postalCode": "32-800",
+      "comments": "dnajk",
+      "branch": "Economy",
+      "active": false
+    },
+    {
+      "id": "b46782e7-16d8-4e66-8ee7-f2c8f49c5968",
+      "name": "jdksalj",
+      "nip": "38927198",
+      "city": "Krakow",
+      "street": "dhsakjh",
+      "postalCode": "32-800",
+      "comments": "jdkasljl",
+      "branch": "Economy",
+      "active": true
+    }
+  ],
+  "food": [
+    {
+      "id": "9e09",
+      "name": "Pizza",
+      "calories": 2000,
+      "protein": 300,
+      "fat": 300,
+      "carbs": 700,
+      "time": "12:20",
+      "customerId": "1d45ec78-0118-4a16-990a-03682f330b89"
+    },
+    {
+      "id": "6df7",
+      "name": "Chleb",
+      "calories": 300,
+      "protein": 10,
+      "fat": 13,
+      "carbs": 40,
+      "time": "12:12",
+      "customerId": "b46782e7-16d8-4e66-8ee7-f2c8f49c5968"
+    }
+  ],
+  "workout": [
+    {
+      "id": "8c8b",
+      "name": "Klata",
+      "sets": 3,
+      "reps": 12,
+      "weight": 100,
+      "comments": "super trening",
+      "Day": "Monday",
+      "customerId": "1d45ec78-0118-4a16-990a-03682f330b89"
+    },
+    {
+      "id": "9c25",
+      "name": "Klata",
+      "sets": 3,
+      "reps": 12,
+      "weight": 100,
+      "comments": "jdklsa",
+      "Day": "Tuesday",
+      "customerId": "b46782e7-16d8-4e66-8ee7-f2c8f49c5968"
+    }
+  ]
+}
