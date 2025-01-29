@@ -1,21 +1,32 @@
-FROM node:18 AS build
+# Use the official Node.js image as the base image
+FROM node:18
 
+# Set the working directory
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Copy the rest of the application code
 COPY . .
 
-RUN npm run build --prod
+# Build the Angular application
+RUN npm run build
 
-FROM nginx:stable-alpine
+# Install a simple web server to serve the Angular application
+RUN npm install -g http-server
 
-WORKDIR /usr/share/nginx/html
+# Install json-server
+RUN npm install -g json-server
 
-COPY --from=build /app/dist/angular-project ./
+# Expose the port the app runs on
+EXPOSE 8080
 
-EXPOSE 80
+# Expose the port for json-server
+EXPOSE 3000
 
-CMD ["nginx", "-g", "daemon off;"]
+# Start both the Angular application and json-server
+CMD ["sh", "-c", "http-server dist/angular-project -p 8080 & json-server --watch data.json --port 3000"]

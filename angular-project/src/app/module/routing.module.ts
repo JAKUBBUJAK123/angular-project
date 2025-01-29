@@ -12,8 +12,8 @@ import { WorkoutFormComponent } from "./workout-form/workout-form.component";
 const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'form', component: FormComponent},
-    {path: 'food/:customerId', component: FoodFormComponent},
-    {path:'workout/:customerId' , component: WorkoutFormComponent}
+    {path: 'food/:customerId', component: FoodFormComponent,},
+    {path:'workout/:customerId' , component: WorkoutFormComponent, }
 ]
 
 

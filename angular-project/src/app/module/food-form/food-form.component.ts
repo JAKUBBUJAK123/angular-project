@@ -6,7 +6,7 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-food-form',
-  
+  standalone: false,
   templateUrl: './food-form.component.html',
   styleUrl: './food-form.component.css'
 })

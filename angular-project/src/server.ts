@@ -1,3 +1,4 @@
+import { enableProdMode } from '@angular/core';
 import {
   AngularNodeAppEngine,
   createNodeRequestHandler,
@@ -12,7 +13,8 @@ const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
-const angularApp = new AngularNodeAppEngine();
+const angularApp = new AngularNodeAppEngine(
+);
 
 /**
  * Example Express Rest API endpoints can be defined here.
