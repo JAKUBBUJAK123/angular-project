@@ -14,7 +14,7 @@ In this app you can create an user, display a list of users, and for each user y
 ## Installation Instructions
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/angular-project.git
+    git clone https://github.com/JAKUBBUJAK123/angular-project.git
     ```
 2. Navigate to the project directory:
     ```bash
